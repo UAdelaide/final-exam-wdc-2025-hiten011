@@ -136,9 +136,9 @@
           try {
             // eslint-disable-next-line no-undef
             const res = await axios.post(path);
-            return 0;
+            return ;
           } catch (e) {
-            console
+            console.error("Error in loging out")
           }
         }
 
