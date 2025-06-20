@@ -65,7 +65,7 @@
               password: this.password
             });
 
-            let role = res.data.user);
+            var role = res.data.user.role;
           } catch (e) {
             console.error("Authentication Failed");
             this.errorMessage = "Authentication Failed";
