@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 
-// session
+// importing ession
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 const app = express();
 
+// creating session
 app.use(cookieParser());
 app.use(session({
     secret: 'secretsecret',
