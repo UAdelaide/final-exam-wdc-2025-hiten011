@@ -25,8 +25,12 @@
             data() {},
             method() {
                 async function getImg() {
-                    const res = await axios.get('https://dog.ceo/api/breeds/image/random');
-                    return res.message;
+                    try {
+                        const res = await axios.get('https://dog.ceo/api/breeds/image/random');
+                        return res.message;
+                     } catch (e) {
+                        return "./"
+                     }
                 }
             },
             mounted() {}
