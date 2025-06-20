@@ -16,7 +16,7 @@ router.get('/api/dogs', async function(req, res, next) {
 
         res.send(rows);
     } catch (err) {
-        res.sendStatus();
+        res.sendStatus(500);
     }
 });
 
