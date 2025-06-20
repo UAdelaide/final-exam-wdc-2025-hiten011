@@ -26,18 +26,6 @@ router.get('/api/dogs', function(req, res, next) {
     } catch (err) {
         isUserVector = false;
     }
-
-    if (!isUserVector) {
-        // if first time user
-        res.sendFile(path.join(__dirname, '../../frontend/personalise.html'));
-    } else {
-        res.sendFile(path.join(__dirname, '../../frontend/personalise-swipe.html'));
-    }
-
-    req.session.visited = true;
-    // res.send('works');
-
-    // console.log(req.session.id);
 });
 
 router.get('/api/walkrequests/open', function(req, res, next) {
