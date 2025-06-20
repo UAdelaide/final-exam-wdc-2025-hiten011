@@ -132,20 +132,6 @@
           }
         }
 
-        async function logout() {
-          let path = '/api/users/logout';
-          try {
-            const res = await axios.post(path);
-            this.redirect('/');
-          } catch (e) {
-            console.error("Error in loging out")
-          }
-        }
-
-        function redirect(path) {
-            window.location.href = path;
-        }
-
         onMounted(() => {
           loadWalks();
         });
@@ -158,6 +144,21 @@
           submitWalkRequest,
           logout
         };
+      },
+      methods: {
+        async function logout() {
+      let path = '/api/users/logout';
+      try {
+        const res = await axios.post(path);
+        this.redirect('/');
+      } catch(e) {
+        console.error("Error in loging out")
+      }
+    }
+
+        function redirect(path) {
+        window.location.href = path;
+      }
       }
     }).mount('#app');
   </script>
