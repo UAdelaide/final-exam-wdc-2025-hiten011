@@ -2,14 +2,15 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 
+// session
+var cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
-
-var cookieParser = require('cookie-parser');
-const session = require('express-session');
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
