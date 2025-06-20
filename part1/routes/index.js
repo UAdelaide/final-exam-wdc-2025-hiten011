@@ -8,9 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/dogs', function(req, res, next) {
-   // checking if user Vector exists
-    const userId = req.user.id;
-    var isUserVector = false;
     try {
 
         const [rows] = await db.query(
