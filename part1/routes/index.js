@@ -46,8 +46,6 @@ router.get('/api/walkrequests/open', async function (req, res, next) {
             JOIN WalkApplications ON WalkApplications.request_id = WalkRequests.request_id
             WHERE WalkRequests.status = 'completed' AND WalkApplications.walker_id = Users.user_id) AS completed_walks
 
-
-
             From Users
             LEFT JOIN WalkRatings ON WalkRatings.walker_id = Users.user_id
             WHERE Users.role = 'walker'
