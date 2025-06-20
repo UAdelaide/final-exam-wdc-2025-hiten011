@@ -168,7 +168,8 @@
 
         async populateDogs() {
           try {
-            await axio.get('/api/users/dogs');
+            const res = await axio.get('/api/users/dogs');
+            cpnsole.log(res);
           } catch (error) {
             console.error('Error Fetching dogs for the user');
           }
