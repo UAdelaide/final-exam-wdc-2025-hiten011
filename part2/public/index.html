@@ -68,8 +68,8 @@
 
             return 0;
           } catch (e) {
-            // eslint-disable-next-line no-console
-            return 1;
+            console.error("Authentication Failed");
+            return
           }
         }
       }
