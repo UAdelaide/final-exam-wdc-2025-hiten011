@@ -60,7 +60,7 @@ VALUES
 ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
 ('carol123', 'carol@example.com', 'hashed789', 'owner'),
 ('hiten', 'hiten@example.com', 'hashed1234', 'walker'),
-('josheen', 'josheen@example.com', 'hashed1234', 'owner');
+('', 'josheen@example.com', 'hashed1234', 'owner');
 
 INSERT INTO Dogs (owner_id, name, size)
 VALUES
