@@ -65,6 +65,9 @@
               password: this.password
             });
 
+            // reseting form
+            this.resetForm();
+
             var role = res.data.user.role;
             if (role === "owner") {
               this.redirect('/owner-dashboard.html');
