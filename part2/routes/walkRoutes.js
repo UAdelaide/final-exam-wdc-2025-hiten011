@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/owner-dashboard', async (req, res) => {
   .
 });
 
