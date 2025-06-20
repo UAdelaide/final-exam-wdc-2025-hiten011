@@ -111,6 +111,16 @@
           }
         }
 
+        async populateDogs() {
+          try {
+            const res = await axios.get('/api/users/dogs');
+            this.dogs = res.data;
+            console.log(dogs);
+          } catch (error) {
+            console.error('Error Fetching dogs for the user');
+          }
+        }
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
@@ -164,16 +174,6 @@
 
         redirect(path) {
           window.location.href = path;
-        },
-
-        async populateDogs() {
-          try {
-            const res = await axios.get('/api/users/dogs');
-            this.dogs = res.data;
-            console.log(dogs);
-          } catch (error) {
-            console.error('Error Fetching dogs for the user');
-          }
         }
       },
       mounted() {
