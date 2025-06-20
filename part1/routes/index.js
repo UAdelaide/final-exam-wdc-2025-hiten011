@@ -14,9 +14,9 @@ router.get('/api/dogs', async function(req, res, next) {
             'SELECT * FROM Dogs'
         );
 
-        res.se
+        res.send(rows);
     } catch (err) {
-        res.send()
+        res.sendStatus();
     }
 });
 
