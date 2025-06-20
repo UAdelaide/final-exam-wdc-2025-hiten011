@@ -101,6 +101,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
+        const dogs
 
         async function loadWalks() {
           try {
@@ -114,7 +115,7 @@
         async function populateDogs() {
           try {
             const res = await axios.get('/api/users/dogs');
-            this.dogs = res.data;
+            dogs = res.data;
             console.log(dogs);
           } catch (error) {
             console.error('Error Fetching dogs for the user');
