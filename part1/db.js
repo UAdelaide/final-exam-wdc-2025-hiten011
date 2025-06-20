@@ -4,7 +4,7 @@ require('dotenv').config();
 const pool = mysql.createPool({
   host: localhost,
   user: root,
-  database: 
+  database: dogwalks.sql
 });
 
 module.exports = pool;
