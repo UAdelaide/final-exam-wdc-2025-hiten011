@@ -34,8 +34,16 @@ router.get('/api/walkrequests/open', async function(req, res, next) {
     }
 });
 
-router.get('/api/walkers/summary', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/api/walkrequests/open', async function(req, res, next) {
+  try {
+        const [rows] = await db.query(
+            ``
+        );
+
+        res.send(rows);
+    } catch (err) {
+        res.sendStatus(500);
+    }
 });
 
 module.exports = router;
