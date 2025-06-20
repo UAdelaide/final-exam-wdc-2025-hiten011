@@ -32,6 +32,9 @@
                     console.log(res.data.message);
                     return res.data.message;
                 }
+            },
+            mounted() {
+                this.getImg();
             }
         }).mount('#index');
     </script>
