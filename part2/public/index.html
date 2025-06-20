@@ -68,6 +68,7 @@
             // reseting form
             this.resetForm();
 
+            // redirecting user
             var role = res.data.user.role;
             if (role === "owner") {
               this.redirect('/owner-dashboard.html');
@@ -82,6 +83,9 @@
         redirect(path) {
             window.location.href = path;
         },
+        resetForm() {
+          this.use
+        }
       }
     }).mount('#app');
   </script>
