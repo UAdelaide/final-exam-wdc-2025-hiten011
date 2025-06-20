@@ -67,5 +67,5 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
 ((SELECT user_id FROM Users WHERE username = 'hiten'), 'josheen', 'small'),
-((SELECT user_id FROM Users WHERE username = 'josheen'), 'Daisy', 'small'),
-((SELECT user_id FROM Users WHERE username = 'carol123'), 'Rocky', 'medium');
+((SELECT user_id FROM Users WHERE username = 'josheen'), 'joe', 'large'),
+((SELECT user_id FROM Users WHERE username = 'joe'), 'liri', 'medium');
