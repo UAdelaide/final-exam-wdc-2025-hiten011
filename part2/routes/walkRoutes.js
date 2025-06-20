@@ -23,6 +23,10 @@ router.get('/owner-dashboard', async (req, res) => {
   res.render('part2/public/owner-dashboard');
 });
 
+router.get('/', async (req, res) => {
+  res.render('part2/public/owner-dashboard');
+});
+
 // POST a new walk request (from owner)
 router.post('/', async (req, res) => {
   const { dog_id, requested_time, duration_minutes, location } = req.body;
