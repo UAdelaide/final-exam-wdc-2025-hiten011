@@ -17,20 +17,22 @@
 
 <body id="index">
     <h1>DOG OF THE DAY</h1>
-    <img :src="getImg()" alt="">
+    <img :src="imgUrl" alt="">
 
     <script>
         const { createApp } = Vue;
 
         createApp({
             data() {
-                return {};
+                return {
+                    imgUrl: ''
+                };
             },
             methods: {
                 async getImg() {
                     const res = await axios.get("https://dog.ceo/api/breeds/image/random");
                     console.log(res.data.message);
-                    return res.data.message;
+                    imgUrl = res.data.message;
                 }
             },
             mounted() {
