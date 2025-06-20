@@ -111,7 +111,7 @@
           }
         }
 
-        async populateDogs() {
+        async function populateDogs() {
           try {
             const res = await axios.get('/api/users/dogs');
             this.dogs = res.data;
@@ -149,6 +149,7 @@
 
         onMounted(() => {
           loadWalks();
+          loadDogs
         });
 
         return {
