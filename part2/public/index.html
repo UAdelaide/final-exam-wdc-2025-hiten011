@@ -60,12 +60,12 @@
       methods: {
         async login() {
           try {
-            const await axios.post('/api/users/login', {
+            const res = await axios.post('/api/users/login', {
               username: username,
               password: password
             });
 
-            console.log()
+            console.log(res);
           } catch (e) {
             console.error("Authentication Failed");
             this.errorMessage = "Authentication Failed";
