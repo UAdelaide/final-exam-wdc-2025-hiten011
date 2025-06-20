@@ -134,9 +134,7 @@
         async function logout() {
           let path = '/api/users/logout';
           try {
-            // eslint-disable-next-line no-undef
             const res = await axios.post(path);
-            return ;
           } catch (e) {
             console.error("Error in loging out")
           }
