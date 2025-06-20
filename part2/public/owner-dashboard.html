@@ -169,7 +169,7 @@
         async populateDogs() {
           try {
             const res = await axios.get('/api/users/dogs');
-            cpnsole.log(res);
+            console.log(res.data);
           } catch (error) {
             console.error('Error Fetching dogs for the user');
           }
