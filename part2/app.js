@@ -11,7 +11,7 @@ const app = express();
 // creating session
 app.use(cookieParser());
 app.use(session({
-    secret: 'secretsecret',
+    secret: 'hiten',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
