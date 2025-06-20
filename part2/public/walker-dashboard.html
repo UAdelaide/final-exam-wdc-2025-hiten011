@@ -93,7 +93,7 @@
           let path = '/api/users/logout';
           try {
             const res = await axios.post(path);
-            redirect('/');
+            this.redirect('/');
           } catch (e) {
             console.error("Error in loging out")
           }
