@@ -30,7 +30,7 @@
                 async getImg() {
                     const res = await axios.get("https://dog.ceo/api/breeds/image/random");
                     console.log(res);
-                    return res.message;
+                    return res.data.message;
                 }
             }
         }).mount('#index');
