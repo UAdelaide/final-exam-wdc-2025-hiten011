@@ -86,10 +86,7 @@ const mysql = require('mysql2/promise');
     );
     `);
 
-
-
         // insert Data
-
         const [user_count] = await db.execute('SELECT COUNT(*) AS count FROM Users');
         if (user_count[0].count === 0) {
             await db.execute(`
