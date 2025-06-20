@@ -18,7 +18,12 @@
 </head>
 <body class="bg-light">
   <div id="app" class="container py-4">
-    <h1 class="mb-4 text-success">Walker Dashboard</h1>
+    <div class="container header">
+      <h1 class="mb-4 text-success">Walker Dashboard</h1>
+      <div>
+        <button type="button" class="btn btn-danger" @click="logout">Log out</button>
+      </div>
+    </div>
 
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>
