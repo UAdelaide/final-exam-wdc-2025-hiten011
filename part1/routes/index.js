@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/dogs', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  .
 });
 
 router.get('/api/walkrequests/open', function(req, res, next) {
