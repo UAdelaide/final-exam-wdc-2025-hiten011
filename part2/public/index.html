@@ -67,9 +67,9 @@
 
             var role = res.data.user.role;
             if (role === "owner") {
-              redirect('/owner-dashboard');
+              this.redirect('/owner-dashboard');
             } else {
-              redirect('/walker-dashboard');
+              this.redirect('/walker-dashboard');
             }
           } catch (e) {
             console.error("Authentication Failed");
