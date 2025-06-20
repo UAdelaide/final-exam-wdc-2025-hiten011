@@ -18,7 +18,7 @@
 
     <div class="input">
       <span>Username</span>
-      <input type="text" name="" id="username">
+      <input type="text" name="" id="username" v-model="username">
     </div>
   </div>
 
@@ -27,7 +27,8 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!'
+          message: 'Welcome to the Dog Walking Service!',
+          username: '',
         };
       }
     }).mount('#app');
