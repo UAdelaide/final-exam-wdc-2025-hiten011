@@ -70,7 +70,10 @@
             console.error("Authentication Failed");
             this.errorMessage = "Authentication Failed";
           }
-        }
+        },
+        redirect(path) {
+            window.location.href = path;
+        },
       }
     }).mount('#app');
   </script>
