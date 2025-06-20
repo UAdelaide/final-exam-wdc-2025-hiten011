@@ -68,6 +68,7 @@
           try {
             const res = await axios.get('/api/users/me');
             const data = res.data;
+            console.log(data);
 
             user = data.user_id;
             console.log(user);
