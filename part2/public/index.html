@@ -60,7 +60,7 @@
       methods: {
         async login() {
           try {
-            await axios.post('/api/auth/login', {
+            await axios.post('/api/users/login', {
               username: username,
               password: password
             });
