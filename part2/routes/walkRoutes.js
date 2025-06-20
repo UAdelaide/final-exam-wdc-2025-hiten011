@@ -23,7 +23,7 @@ router.get('/owner-dashboard', async (req, res) => {
   res.render('part2/public/owner-dashboard');
 });
 
-router.get('/', async (req, res) => {
+router.get('/walker-dashboard', async (req, res) => {
   res.render('part2/public/owner-dashboard');
 });
 
