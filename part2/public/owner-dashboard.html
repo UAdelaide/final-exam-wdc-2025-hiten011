@@ -39,7 +39,7 @@
           <div class="mb-3">
             <label class="form-label">Dog ID</label>
             <!-- <input v-model="form.dog_id" type="number" class="form-control" required> -->
-             <!--  -->
+             <!-- Added selected feature  -->
             <select v-model="form.dog_id" class="form-control" required>
               <option value="" disabled></option>
               <option v-for="dog in dogs" :value="dog.dog_id">{{ dog.name }}</option>
