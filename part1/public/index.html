@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -19,11 +20,15 @@
     <img src="" alt="">
 
     <script>
-    const { createApp } = Vue;
-    createApp({
-        data() {},
-        
-    }).mount('#index');
-</script>
+        const { createApp } = Vue;
+        createApp({
+            data() { },
+            mounted() {
+                this.checkLoginStatus();
+                document.addEventListener('click', this.clickOutside);
+            }
+        }).mount('#index');
+    </script>
 </body>
+
 </html>
