@@ -21,21 +21,20 @@
 
     <script>
         const { createApp } = Vue;
+
         createApp({
-            data() {},
-            methods() {
-                async function getImg() {
-                    try {
-                        const res = await axios.get('https://dog.ceo/api/breeds/image/random');
-                        console.log(res);
-                        return res.message;
-                    } catch (e) {
-                        return "";
-                    }
-                }
+            data() {
+                return {
+                    img: '',
+                };
             },
-            mounted() {}
-        }).mount('#index');
+            methods: {
+                async getImg() {
+                    const res = await axios.get("https://dog.ceo/api/breeds/image/random");
+                    return res.message;
+                }
+            }
+        }).mount('#app');
     </script>
 </body>
 
