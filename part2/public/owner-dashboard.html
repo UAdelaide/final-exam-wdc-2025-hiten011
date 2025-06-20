@@ -170,7 +170,7 @@
           try {
             const res = await axios.get('/api/users/dogs');
             this.dogs = res.data;
-            console.l
+            console.log(this.dogs);
           } catch (error) {
             console.error('Error Fetching dogs for the user');
           }
