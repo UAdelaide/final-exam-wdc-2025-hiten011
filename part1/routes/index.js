@@ -11,15 +11,8 @@ router.get('/api/dogs', function(req, res, next) {
     try {
 
         const [rows] = await db.query(
-            'SELECT user_vector FROM USERSETTINGS WHERE user_id = ?',
-            [userId]
+            'SELECT * FROM Dogs'
         );
-
-        if (!rows[0].user_vector) {
-            isUserVector = false;
-        } else {
-            isUserVector = true;
-        }
     } catch (err) {
         isUserVector = false;
     }
