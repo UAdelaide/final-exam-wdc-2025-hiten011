@@ -7,18 +7,15 @@ const mysql = require('mysql2/promise');
 // Inserting database
 (async () => {
     try {
-        // Connect to MySQL without specifying a database
         const connection = await mysql.createConnection({
             host: '127.0.0.1',
             user: 'root',
-            password: '' // Set your MySQL root password
+            password: ''
         });
 
-        // Create the database if it doesn't exist
         await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
         await connection.end();
 
-        // Now connect to the created database
         const db = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
@@ -26,7 +23,6 @@ const mysql = require('mysql2/promise');
             database: 'DogWalkService'
         });
 
-        // create tableif it doesn't exist
         await db.execute(`
       CREATE TABLE IF NOT EXISTS Users (
         user_id INT AUTO_INCREMENT PRIMARY KEY,
