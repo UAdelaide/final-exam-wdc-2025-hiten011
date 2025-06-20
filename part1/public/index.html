@@ -28,9 +28,9 @@
                     try {
                         const res = await axios.get('https://dog.ceo/api/breeds/image/random');
                         return res.message;
-                     } catch (e) {
-                        return "./"
-                     }
+                    } catch (e) {
+                        return "";
+                    }
                 }
             },
             mounted() {}
