@@ -90,23 +90,67 @@ const mysql = require('mysql2/promise');
     );
     `);
 
-    // Inserting Data
-    
 
-    }) ();
 
-    var indexRouter = require('./routes/index');
-    var usersRouter = require('./routes/users');
+        // insert dummy data into table
 
-    var app = express();
+        const [user_count] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        if (user_count[0].count === 0) {
+            await db.execute(`
+        INSERT INTO Users (username, email, password_hash, role)
+        VALUES
+('alice123', 'alice@example.com', 'hashed123', 'owner'),
+('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+('carol123', 'carol@example.com', 'hashed789', 'owner'),
+('loli', 'loli@example.com', 'hashed1234', 'walker'),
+('kholi', 'joli@example.com', 'hashed1234', 'owner');
+        `);
+        }
 
-    app.use(logger('dev'));
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: false }));
-    app.use(cookieParser());
-    app.use(express.static(path.join(__dirname, 'public')));
+        const [dogs_count] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+        if (dogs_count[0].count === 0) {
+            await db.execute(`
+        INSERT INTO Dogs (owner_id, name, size)
+        VALUES
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+((SELECT user_id FROM Users WHERE username = 'alice123'), 'josheen', 'small'),
+((SELECT user_id FROM Users WHERE username = 'alice123'), 'loli', 'large'),
+((SELECT user_id FROM Users WHERE username = 'kholi'), 'poli', 'medium');
+        `);
+        }
 
-    app.use('/', indexRouter);
-    app.use('/users', usersRouter);
 
-    module.exports = app;
+        const [Walk_requests_count] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+        if (Walk_requests_count[0].count === 0) {
+            await db.execute(`
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+        VALUES
+        ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+((SELECT dog_id FROM Dogs WHERE name = 'josheen'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+((SELECT dog_id FROM Dogs WHERE name = 'loli'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+((SELECT dog_id FROM Dogs WHERE name = 'poli'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted');
+        `);
+        }
+
+    } catch (err) {
+        console.error('Error setting up database: ', err);
+    }
+})();
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+module.exports = app;
