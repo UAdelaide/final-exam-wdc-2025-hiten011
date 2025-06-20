@@ -13,6 +13,8 @@ router.get('/api/dogs', async function(req, res, next) {
         const [rows] = await db.query(
             'SELECT * FROM Dogs'
         );
+
+        res.se
     } catch (err) {
         res.send()
     }
