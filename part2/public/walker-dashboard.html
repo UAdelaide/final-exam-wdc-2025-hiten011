@@ -98,12 +98,7 @@
         }
 
         redirect(path) {
-            if (path === "/logout") {
-                helperLogout('api/auth/logout');
-                window.location.href = '/home';
-            } else {
-                window.location.href = path;
-            }
+            window.location.href = path;
         }
 
         onMounted(() => {
