@@ -66,7 +66,11 @@
             });
 
             var role = res.data.user.role;
-            if (role === "owner")
+            if (role === "owner") {
+              redirect('/owner');
+            } else {
+              redirect('');
+            }
           } catch (e) {
             console.error("Authentication Failed");
             this.errorMessage = "Authentication Failed";
