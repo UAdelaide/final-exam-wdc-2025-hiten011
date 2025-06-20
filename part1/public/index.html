@@ -22,10 +22,12 @@
     <script>
         const { createApp } = Vue;
         createApp({
-            data() { },
+            data() {},
+            method() {
+                
+            }
             mounted() {
-                this.checkLoginStatus();
-                document.addEventListener('click', this.clickOutside);
+                this.getImg();
             }
         }).mount('#index');
     </script>
