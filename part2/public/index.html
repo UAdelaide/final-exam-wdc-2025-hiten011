@@ -60,7 +60,6 @@
       methods: {
         async login() {
           try {
-            // eslint-disable-next-line no-undef
             await axios.post('/api/auth/login', {
               username: username,
               password: password
@@ -69,7 +68,7 @@
             return 0;
           } catch (e) {
             console.error("Authentication Failed");
-            this.errorMessage
+            this.errorMessage = "Authentication Failed";
           }
         }
       }
