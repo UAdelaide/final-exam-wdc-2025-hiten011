@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/owner-dashboard', async (req, res) => {
-  res.render('owner')
+  res.render('part2/public/owner-dashboard');
 });
 
 // POST a new walk request (from owner)
