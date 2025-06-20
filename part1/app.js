@@ -90,6 +90,9 @@ const mysql = require('mysql2/promise');
     );
     `);
 
+    // Inserting Data
+    
+
     }) ();
 
     var indexRouter = require('./routes/index');
