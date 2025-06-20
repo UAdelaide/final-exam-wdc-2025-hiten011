@@ -66,11 +66,11 @@
             });
 
             var role = res.data.user.role;
-            if (role === "owner") {
-              this.redirect('/owner-dashboard');
-            } else {
-              this.redirect('/walker-dashboard');
-            }
+            // if (role === "owner") {
+            //   this.redirect('/owner-dashboard');
+            // } else {
+            //   this.redirect('/walker-dashboard');
+            // }
           } catch (e) {
             console.error("Authentication Failed");
             this.errorMessage = "Authentication Failed";
