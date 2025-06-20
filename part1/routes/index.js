@@ -14,7 +14,7 @@ router.get('/api/dogs', async function(req, res, next) {
             'SELECT * FROM Dogs'
         );
     } catch (err) {
-        isUserVector = false;
+        
     }
 });
 
