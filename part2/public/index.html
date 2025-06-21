@@ -140,7 +140,7 @@
         getImage() {
           axios.get("https://dog.ceo/api/breeds/image/random")
             .then(res => {
-              
+              console.log(res);
               this.imgUrl = res.data.message;
             })
             .catch(error => {
