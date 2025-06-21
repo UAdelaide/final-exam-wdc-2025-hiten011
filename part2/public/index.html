@@ -70,7 +70,7 @@
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dog.owner_id }}</td>
-        <td><img :src="d" alt="Random Dog Photo"></td>
+        <td><img :src="dogs.photo" alt="Random Dog Photo"></td>
       </tr>
     </tbody>
   </table>
@@ -148,7 +148,7 @@
         }
       },
       mounted() {
-        this.getDogsData();
+        this.intit;
       }
     }).mount('#dogs');
   </script>
