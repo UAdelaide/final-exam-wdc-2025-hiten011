@@ -150,14 +150,21 @@
 
         async init() {
           try {
-            const res = await getDogsData();
+            const res = await this.getDogsData();
+            this.dogs = [];
 
-            for (dog in res) {
-              tempObj = {dog, 'photo': await getImage};
-              this.dogs.push(tempObj);
+            for (const dog of res) {
+              // fetch image
+              const photoUrl = await this.getImage();
+
+              // new Obj
+              this.dogs.push({
+                ...dog,
+                photo: photoUrl
+              });
             }
           } catch (error) {
-            console.error("Couldn't load the table");
+            console.error("Couldn't load the table", error);
           }
         }
       },
