@@ -149,6 +149,10 @@
         async init() {
           try {
             const res = await getDogsData();
+
+            for (dog in res) {
+              this.dogs.push()
+            }
           } catch (error) {
             console.error("Couldn't load the table");
           }
