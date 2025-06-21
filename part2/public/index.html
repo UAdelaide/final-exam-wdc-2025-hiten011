@@ -139,7 +139,7 @@
         },
         getImage() {
           try {
-            const res = await axios.get("https://dog.ceo/api/breeds/image/random");
+            const res = axios.get("https://dog.ceo/api/breeds/image/random");
             console.log(res.data.message);
             this.imgUrl = res.data.message;
           } catch (error) {
