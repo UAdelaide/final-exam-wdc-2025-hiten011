@@ -70,7 +70,7 @@
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dog.owner_id }}</td>
-        <td><img :src="getphoto" alt="Random Dog Photo"></td>
+        <td><img :src="getImage" alt="Random Dog Photo"></td>
       </tr>
     </tbody>
   </table>
@@ -139,11 +139,11 @@
         },
         getImage() {
           try {
-            const res = axios.get("https://dog.ceo/api/breeds/image/random");
+            const res = await axios.get("https://dog.ceo/api/breeds/image/random");
             console.log(res.data.message);
             this.imgUrl = res.data.message;
           } catch (error) {
-            console.error("Error Fetching Dog Image")
+            console.error("Error Fetching Dog Image");
           }
         }
       },
