@@ -131,38 +131,7 @@
           errorMessage: ''
         };
       },
-      methods: {
-        async login() {
-          try {
-            const res = await axios.post('/api/users/login', {
-              username: this.username,
-              password: this.password,
-            });
-
-            // reseting form
-            this.resetForm();
-
-            // redirecting user
-            var role = res.data.user.role;
-            if (role === "owner") {
-              this.redirect('/owner-dashboard.html');
-            } else {
-              this.redirect('/walker-dashboard.html');
-            }
-          } catch (e) {
-            console.error("Authentication Failed");
-            this.errorMessage = "Authentication Failed";
-          }
-        },
-        redirect(path) {
-          window.location.href = path;
-        },
-        resetForm() {
-          this.username = '';
-          this.password = '';
-          this.errorMessage = '';
-        }
-      }
+      methods: {}
     }).mount('#app');
   </script>
 
