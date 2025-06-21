@@ -33,6 +33,10 @@
       border-radius: 0.2rem;
       margin-top: 0.25rem;
     }
+
+    table {
+      width: ;
+    }
   </style>
 </head>
 
@@ -52,28 +56,28 @@
     </div>
 
     <button type="button" class="btn btn-primary margin-top" @click="login">Login</button>
-
-    <table class="table table-striped" id="dogs">
-      <thead>
-        <tr>
-          <th scope="col">Dog ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Size</th>
-          <th scope="col">Owner ID</th>
-          <th scope="col">Photo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="dog in dogs">
-          <th scope="row">{{ dog.dog_id }}</th>
-          <td>{{ dog.name }}</td>
-          <td>{{ dog.size }}</td>
-          <td>{{ dog.owner_id }}</td>
-          <td><img :src="dog.photo" alt="Random Dog Photo"></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
+
+  <table class="table table-striped" id="dogs">
+    <thead>
+      <tr>
+        <th scope="col">Dog ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Size</th>
+        <th scope="col">Owner ID</th>
+        <th scope="col">Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="dog in dogs">
+        <th scope="row">{{ dog.dog_id }}</th>
+        <td>{{ dog.name }}</td>
+        <td>{{ dog.size }}</td>
+        <td>{{ dog.owner_id }}</td>
+        <td><img :src="dog.photo" alt="Random Dog Photo"></td>
+      </tr>
+    </tbody>
+  </table>
 
   <script>
     const { createApp } = Vue;
