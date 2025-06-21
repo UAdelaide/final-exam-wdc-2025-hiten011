@@ -46,7 +46,6 @@
             methods: {
                 async getImg() {
                     const res = await axios.get("https://dog.ceo/api/breeds/image/random");
-                    console.log(res.data.message);
                     this.imgUrl = res.data.message;
                 }
             },
