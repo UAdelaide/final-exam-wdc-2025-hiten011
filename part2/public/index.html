@@ -129,7 +129,7 @@
         };
       },
       methods: {
-        async getDogsData() {
+        getDogsData() {
           try {
             const res = await axios.get('/api/walks/dogs');
             this.dogs = res.data;
@@ -137,9 +137,9 @@
             console.error("Error fetching dogs data");
           }
         },
-        async getImage() {
+        getImage() {
           try {
-            const res = await axios.get("https://dog.ceo/api/breeds/image/random");
+            const res = await get("https://dog.ceo/api/breeds/image/random");
             console.log(res.data.message);
             return res.data.message;
           } catch (error) {
