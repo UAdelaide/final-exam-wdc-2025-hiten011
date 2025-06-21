@@ -120,6 +120,52 @@
     }).mount('#app');
   </script>
 
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          message: 'Welcome to the Dog Walking Service!',
+          username: '',
+          password: '',
+          errorMessage: ''
+        };
+      },
+      methods: {
+        async login() {
+          try {
+            const res = await axios.post('/api/users/login', {
+              username: this.username,
+              password: this.password,
+            });
+
+            // reseting form
+            this.resetForm();
+
+            // redirecting user
+            var role = res.data.user.role;
+            if (role === "owner") {
+              this.redirect('/owner-dashboard.html');
+            } else {
+              this.redirect('/walker-dashboard.html');
+            }
+          } catch (e) {
+            console.error("Authentication Failed");
+            this.errorMessage = "Authentication Failed";
+          }
+        },
+        redirect(path) {
+          window.location.href = path;
+        },
+        resetForm() {
+          this.username = '';
+          this.password = '';
+          this.errorMessage = '';
+        }
+      }
+    }).mount('#app');
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
