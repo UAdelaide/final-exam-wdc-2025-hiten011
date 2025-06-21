@@ -148,7 +148,7 @@
 
         async init() {
           try {
-            
+            const res = await getDogsData();
           } catch (error) {
             console.error("Couldn't load the table");
           }
