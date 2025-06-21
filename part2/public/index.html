@@ -139,7 +139,8 @@
         },
         async getImage() {
           try {
-            const res = await 
+            const res = await axios.get("https://dog.ceo/api/breeds/image/random");
+            this.imgUrl = res.data.message;
           } catch (error) {
             console.error("Error Fetching Dog Image")
           }
