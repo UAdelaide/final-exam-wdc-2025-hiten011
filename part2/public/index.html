@@ -70,7 +70,7 @@
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dog.owner_id }}</td>
-        <td><img :src="getImage" alt="Random Dog Photo"></td>
+        <td><img :src="getphoto" alt="Random Dog Photo"></td>
       </tr>
     </tbody>
   </table>
@@ -129,21 +129,21 @@
         };
       },
       methods: {
-        getDogsData() {
+        async getDogsData() {
           try {
-            const res = await getRequest('/api/walks/dogs');
-            this.dogs = res;
+            const res = await axios.get('/api/walks/dogs');
+            this.dogs = res.data;
           } catch (error) {
             console.error("Error fetching dogs data");
           }
         },
         getImage() {
           try {
-            const res = await getRequest("https://dog.ceo/api/breeds/image/random");
+            const res = await axios.get("https://dog.ceo/api/breeds/image/random");
             console.log(res.data.message);
-            return res.data.message;
+            this.imgUrl = res.data.message;
           } catch (error) {
-            console.error("Error Fetching Dog Image");
+            console.error("Error Fetching Dog Image")
           }
         }
       },
