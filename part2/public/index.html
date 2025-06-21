@@ -131,7 +131,7 @@
         async getDogsData() {
           try {
             const res = await axios.get('/api/walks/dogs');
-            
+            console.log(res.data);
           } catch (error) {
             console.error("Error fetching dogs data");
           }
