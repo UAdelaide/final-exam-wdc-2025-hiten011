@@ -70,8 +70,8 @@
 
   <h2 class="mb-4">All Registered Dogs</h2>
   <div id="dogs">
-    <h3 v-show="!isLoading">Loading Dog list...</h3>
-    <table class="table table-striped">
+    <h3 v-show="isLoading">Loading Dog list...</h3>
+    <table v-show="!isLoading" class="table table-striped">
       <thead>
         <tr>
           <th scope="col">Dog ID</th>
