@@ -135,6 +135,7 @@
             return res.data;
           } catch (error) {
             console.error("Error fetching dogs data");
+            return 
           }
         },
         async getImage() {
@@ -143,6 +144,7 @@
             return res.data.message;
           } catch (error) {
             console.error("Error Fetching Dog Image");
+            return '';
           }
         },
 
