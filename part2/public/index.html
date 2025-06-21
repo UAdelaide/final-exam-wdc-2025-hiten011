@@ -68,8 +68,8 @@
     <button type="button" class="btn btn-primary margin-top" @click="login">Login</button>
   </div>
 
-  <h2 class="mb-4 center">All Registered Dogs</h2>
   <div id="dogs">
+    <h2 class="mb-4 center">All Registered Dogs</h2>
     <h3 class="center" v-show="isLoading">Loading Dog list...</h3>
     <table v-show="!isLoading" class="table table-striped">
       <thead>
