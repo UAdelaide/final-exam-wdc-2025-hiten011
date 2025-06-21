@@ -151,7 +151,8 @@
             const res = await getDogsData();
 
             for (dog in res) {
-              tempObj = {dog, }
+              tempObj = {dog, 'photo': await getImage};
+              this.dogs.push(tem)
             }
           } catch (error) {
             console.error("Couldn't load the table");
