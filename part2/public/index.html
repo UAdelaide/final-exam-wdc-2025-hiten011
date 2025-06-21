@@ -132,12 +132,12 @@
         async getDogsData() {
           try {
             const res = await axios.get('/api/walks/dogs');
-            this.dogs = res.data;
+            return res.data;
           } catch (error) {
             console.error("Error fetching dogs data");
           }
         },
-        getImage() {
+        async getImage() {
           try {
             const res = await axios.get("https://dog.ceo/api/breeds/image/random");
             return res.data.message;
@@ -147,7 +147,7 @@
         }
       },
       mounted() {
-        this.init;
+        this.init();
       }
     }).mount('#dogs');
   </script>
