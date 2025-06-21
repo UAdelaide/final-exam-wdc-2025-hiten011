@@ -131,15 +131,15 @@
       methods: {
         getDogsData() {
           try {
-            const res = await axios.get('/api/walks/dogs');
-            this.dogs = res.data;
+            const res = await getRequest('/api/walks/dogs');
+            this.dogs = res;
           } catch (error) {
             console.error("Error fetching dogs data");
           }
         },
         getImage() {
           try {
-            const res = await get("https://dog.ceo/api/breeds/image/random");
+            const res = await getRequest("https://dog.ceo/api/breeds/image/random");
             console.log(res.data.message);
             return res.data.message;
           } catch (error) {
