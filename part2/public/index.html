@@ -69,27 +69,28 @@
   </div>
 
   <h2 class="mb-4">All Registered Dogs</h2>
-  <div id="">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Dog ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Size</th>
-        <th scope="col">Owner ID</th>
-        <th scope="col">Photo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="dog in dogs">
-        <th scope="row">{{ dog.dog_id }}</th>
-        <td>{{ dog.name }}</td>
-        <td>{{ dog.size }}</td>
-        <td>{{ dog.owner_id }}</td>
-        <td><img :src="dog.photo" alt="Random Dog Photo"></td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="dogs">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Dog ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Size</th>
+          <th scope="col">Owner ID</th>
+          <th scope="col">Photo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in dogs">
+          <th scope="row">{{ dog.dog_id }}</th>
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.owner_id }}</td>
+          <td><img :src="dog.photo" alt="Random Dog Photo"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <script>
     const { createApp } = Vue;
