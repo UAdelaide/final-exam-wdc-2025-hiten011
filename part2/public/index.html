@@ -152,7 +152,7 @@
 
             for (dog in res) {
               tempObj = {dog, 'photo': await getImage};
-              this.dogs.push(tem)
+              this.dogs.push(tempObj);
             }
           } catch (error) {
             console.error("Couldn't load the table");
