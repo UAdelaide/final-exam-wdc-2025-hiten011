@@ -140,15 +140,14 @@
         getImage() {
           try {
             const res = await axios.get("https://dog.ceo/api/breeds/image/random");
-            console.log(res.data.message);
-            this.imgUrl = res.data.message;
+            return res.data.message;
           } catch (error) {
             console.error("Error Fetching Dog Image");
           }
         }
       },
       mounted() {
-        this.intit;
+        this.init;
       }
     }).mount('#dogs');
   </script>
